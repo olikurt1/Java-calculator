@@ -12,6 +12,7 @@ public class Calculator {
     Color customBlack = new Color(28, 28, 28);
     Color customOrange = new Color(255, 149, 0);
 
+    //Setting the labels for all buttons
      String[] buttonValues = {
         "AC", "+/-", "%", "÷", 
         "7", "8", "9", "×", 
@@ -19,6 +20,7 @@ public class Calculator {
         "1", "2", "3", "+",
         "0", ".", "√", "="
     };
+    //setting which symbols will get different colours
     String[] rightSymbols = {"÷", "×", "-", "+", "="};
     String[] topSymbols = {"AC", "+/-", "%"}; 
     
@@ -51,8 +53,20 @@ public class Calculator {
         displayPanel.setLayout(new BorderLayout());
         displayPanel.add(displayLabel);//add labels into panels
         frame.add(displayPanel, BorderLayout.NORTH);//add panels into the frame but sets it to be at the top
+        
+        //separate panel to the number panel but same colour so before buttons still looks like one panel
+        buttonsPanel.setLayout(new GridLayout(5, 4));
+        buttonsPanel.setBackground(customBlack);
+        frame.add(buttonsPanel);
 
-
+        //for loop which creates a button corresponding to each symbol in the full array
+        for(int x = 0; x < buttonValues.length;x++){
+            JButton button = new JButton();
+            String buttonValue = buttonValues[x];
+            button.setFont(new Font("Arial", Font.PLAIN, 30));
+            button.setText(buttonValue);
+            buttonsPanel.add(button);
+        }
     }
 
 }
