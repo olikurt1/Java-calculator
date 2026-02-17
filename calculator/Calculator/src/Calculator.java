@@ -65,7 +65,8 @@ public class Calculator {
             String buttonValue = buttonValues[x];
             button.setFont(new Font("Arial", Font.PLAIN, 30));
             button.setText(buttonValue);
-            button.setFocusable(false);//removes border around symbol when pressing button 
+            button.setFocusable(false);//removes border around symbol when pressing button
+            button.setBorder(new LineBorder(customBlack));
             //determining what colour the current button should be based on whether its included in one of the other arrays
             if(Arrays.asList(topSymbols).contains(buttonValue)){
                 button.setForeground(customBlack);
