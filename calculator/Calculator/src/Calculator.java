@@ -81,6 +81,40 @@ public class Calculator {
                 button.setBackground(customDarkGray);
             }
             buttonsPanel.add(button);
+            //event handling to respond whenever a button is pressed
+            button.addActionListener(new ActionListener(){
+                //e is the action 
+                public void actionPerformed(ActionEvent e){
+                    //stores the source of the action event into the button variable
+                    JButton button = (JButton) e.getSource();
+                    String buttonValue = button.getText();
+                    if(Arrays.asList(rightSymbols).contains(buttonValue)){
+
+                    }
+                    else if(Arrays.asList(topSymbols).contains(buttonValue)){
+
+                    }
+                    else{
+                        if(buttonValue == "."){
+                            if(!displayLabel.getText().contains(buttonValue)){
+                                displayLabel.setText(displayLabel.getText() + buttonValue);
+                            }
+
+                        }
+                        else if("0123456789".contains(buttonValue)){
+                            if(displayLabel.getText() == "0"){
+                                displayLabel.setText(buttonValue); //get immediate value rather than decimal value
+                            }
+                            else{
+                                displayLabel.setText(displayLabel.getText() + buttonValue);
+                            }
+                        }
+                    }
+
+                }
+            });
+
+            
         }
     }
 
