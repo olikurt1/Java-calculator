@@ -38,7 +38,7 @@ public class Calculator {
 
         displayPanel.setLayout(new BorderLayout());
         displayPanel.add(displayLabel);//add labels into panels
-        frame.add(displayPanel);//add panels into the frame 
+        frame.add(displayPanel, BorderLayout.NORTH);//add panels into the frame but sets it to be at the top
 
 
     }
