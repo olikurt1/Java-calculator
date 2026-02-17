@@ -12,10 +12,22 @@ public class Calculator {
     Color customBlack = new Color(28, 28, 28);
     Color customOrange = new Color(255, 149, 0);
 
+     String[] buttonValues = {
+        "AC", "+/-", "%", "÷", 
+        "7", "8", "9", "×", 
+        "4", "5", "6", "-",
+        "1", "2", "3", "+",
+        "0", ".", "√", "="
+    };
+    String[] rightSymbols = {"÷", "×", "-", "+", "="};
+    String[] topSymbols = {"AC", "+/-", "%"}; 
+    
     // create a window, JFrame comes from javax.swing.*
     JFrame frame = new JFrame("Calculator");
     JLabel displayLabel = new JLabel(); //text will go inside label
     JPanel displayPanel = new JPanel(); //label will go inside panel
+    JPanel buttonsPanel = new JPanel(); //panels for the buttons
+    
 
 
     //class calling itself possibly recursion to keep it running indefinitely? 
