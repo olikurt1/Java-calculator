@@ -30,6 +30,10 @@ public class Calculator {
     JPanel displayPanel = new JPanel(); //label will go inside panel
     JPanel buttonsPanel = new JPanel(); //panels for the buttons
     
+    //will keep track of values in the field eg: A+B
+    String A = "0";
+    String operator = null;
+    String B = null;
 
 
     //class calling itself possibly recursion to keep it running indefinitely? 
@@ -92,7 +96,15 @@ public class Calculator {
 
                     }
                     else if(Arrays.asList(topSymbols).contains(buttonValue)){
+                        if(buttonValue == "AC"){
 
+                        }
+                        else if(buttonValue == "+/-"){
+
+                        }
+                        else if (buttonValue == "%"){
+
+                        }
                     }
                     else{
                         if(buttonValue == "."){
