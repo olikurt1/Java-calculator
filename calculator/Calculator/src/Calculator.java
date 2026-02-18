@@ -97,7 +97,9 @@ public class Calculator {
                     }
                     else if(Arrays.asList(topSymbols).contains(buttonValue)){
                         if(buttonValue == "AC"){
-
+                            //function call and setting text back to 0
+                            clearAll();
+                            displayLabel.setText("0");
                         }
                         else if(buttonValue == "+/-"){
 
@@ -128,6 +130,12 @@ public class Calculator {
 
             
         }
+    }
+    //sets the value of A back to 0 and removes everything else
+    void clearAll(){
+        A = "0";
+        operator = null;
+        B =null;
     }
 
 }
