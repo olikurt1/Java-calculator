@@ -97,15 +97,19 @@ public class Calculator {
                     }
                     else if(Arrays.asList(topSymbols).contains(buttonValue)){
                         if(buttonValue == "AC"){
-                            //function call and setting text back to 0
+                            //function call and setting text back to 0 when pressed
                             clearAll();
                             displayLabel.setText("0");
                         }
                         else if(buttonValue == "+/-"){
-
+                            double numDisplay = Double.parseDouble(displayLabel.getText());
+                            numDisplay *= -1;
+                            displayLabel.setText(removeZeroDecimal(numDisplay));
                         }
                         else if (buttonValue == "%"){
-
+                            double numDisplay = Double.parseDouble(displayLabel.getText());
+                            numDisplay /= 100;
+                            displayLabel.setText(removeZeroDecimal(numDisplay));
                         }
                     }
                     else{
@@ -136,6 +140,15 @@ public class Calculator {
         A = "0";
         operator = null;
         B =null;
+    }
+    //function checks if modulus value of number is 0 to determine if number should show decimal value if that value is 0
+    String removeZeroDecimal(double numDisplay){
+        if (numDisplay % 1 == 0){
+            return Integer.toString((int)numDisplay);
+        }
+        else{
+            return Double.toString(numDisplay);
+        }
     }
 
 }
